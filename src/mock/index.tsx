@@ -25,8 +25,8 @@ export const UnPerformanceData = [
   {
     name: "DAX Index Future (FDAX)/C1",
     code: "CD439145798",
-    percent: "+0.50%",
-    value: "7.30",
+    percent: "-0.50%",
+    value: "-7.30",
   },
   {
     name: "S&P 500 Index Future (ES)/C1",

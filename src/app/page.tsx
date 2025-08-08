@@ -2,7 +2,7 @@ import { HeaderSummary } from "@/components/header";
 import { PortfolioValueChart } from "@/components/line-chart";
 import { UnrealizedPerformance } from "@/components/unrealized-performance";
 
-import { headerData } from "@/mock";
+import { headerData, UnPerformanceData } from "@/mock";
 
 export default function Home() {
   return (
@@ -28,9 +28,16 @@ export default function Home() {
 
       <div className="flex gap-6">
         <div className="w-1/2">
-          <UnrealizedPerformance.Root>
-            <UnrealizedPerformance.Thead />
-            <UnrealizedPerformance.Tbody />
+          <UnrealizedPerformance.Root title="Unrealized Performance">
+            {UnPerformanceData.map((item) => (
+              <UnrealizedPerformance.Body
+                key={item.code}
+                name={item.name}
+                code={item.code}
+                percent={item.percent}
+                value={item.value}
+              />
+            ))}
           </UnrealizedPerformance.Root>
         </div>
 
