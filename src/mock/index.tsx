@@ -14,3 +14,24 @@ export const headerData = {
   unrealizedPerfValue: "592.60",
   unrealizedPerfPercent: "-40.80%",
 };
+
+export const UnPerformanceData = [
+  {
+    name: "FTSE MIB Index Future (FTMIB)/C1",
+    code: "CD439145797",
+    percent: "+0.37%",
+    value: "5.22",
+  },
+  {
+    name: "DAX Index Future (FDAX)/C1",
+    code: "CD439145798",
+    percent: "+0.50%",
+    value: "7.30",
+  },
+  {
+    name: "S&P 500 Index Future (ES)/C1",
+    code: "CD439145799",
+    percent: "+0.25%",
+    value: "3.15",
+  },
+];
