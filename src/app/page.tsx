@@ -1,6 +1,7 @@
 import { HeaderSummary } from "@/components/header";
 import { PortfolioValueChart } from "@/components/line-chart";
-import { Performance } from "@/components/unrealized";
+import { UnrealizedPerformance } from "@/components/unrealized-performance";
+
 import { headerData } from "@/mock";
 
 export default function Home() {
@@ -24,9 +25,13 @@ export default function Home() {
       />
 
       <div className="mt-10" />
+
       <div className="flex gap-6">
         <div className="w-1/2">
-          <Performance />
+          <UnrealizedPerformance.Root>
+            <UnrealizedPerformance.Thead />
+            <UnrealizedPerformance.Tbody />
+          </UnrealizedPerformance.Root>
         </div>
 
         <div className="w-1/2">

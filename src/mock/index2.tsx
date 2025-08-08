@@ -1,6 +1,6 @@
 "use client";
 
-export function Performance() {
+export function UP() {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-4">Unrealized performance</h2>
