@@ -1,0 +1,16 @@
+export const headerData = {
+  currency: "EUR",
+  value: 500.15,
+  todayChangeValue: "+148.90",
+  todayChangePercent: "-48.90%",
+  totalPerfValue: "+529.69",
+  totalPerfPercent: "-48.90%",
+  purchaseValue: "29.69",
+  position: 21.2,
+  date: "8/04/25",
+  hour: "11:28:53 AM",
+  realizedProfitsValue: "592.60",
+  realizedProfitsPercent: "+40.80%",
+  unrealizedPerfValue: "592.60",
+  unrealizedPerfPercent: "-40.80%",
+};
