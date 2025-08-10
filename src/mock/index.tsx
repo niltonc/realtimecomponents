@@ -35,3 +35,24 @@ export const UnPerformanceData = [
     value: "3.15",
   },
 ];
+
+export const PortfolioWeightData = [
+  {
+    name: "Telecom Italia Spa (TIT) - MIL/C4",
+    code: "NE763063755",
+    percent: "90.30%",
+    value: "4,004.27",
+  },
+  {
+    name: "JP Morgan U.S. Government Money Market Fund  ",
+    code: "NA648303213",
+    percent: "28.90%",
+    value: "1,126.2",
+  },
+  {
+    name: "Churchill Capital Corp IV C/WTS 04/08/25 (To Pur Com)",
+    code: "QA836629230",
+    percent: "-10.20%",
+    value: "4,894.25",
+  },
+];
