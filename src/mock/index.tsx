@@ -56,3 +56,36 @@ export const PortfolioWeightData = [
     value: "4,894.25",
   },
 ];
+
+export const PieChartData = [
+  ["Asset classes", "percentage"],
+  ["Stock", 9.19],
+  ["Investment Product", 8.9],
+  ["Option", 8.8],
+  ["Bond", 6.96],
+  ["Interest Rate", 6.58],
+  ["Index", 5.51],
+  ["Fund", 4.45],
+  ["Others", 50.61],
+];
+
+export const colors = [
+  "#2193fd",
+  "#2ba617",
+  "#df720c",
+  "#e31b6f",
+  "#9d8f0c",
+  "#a12ed7",
+  "#0c8f9d",
+  "#dedede",
+];
+
+export const AssetClassPercentages = [
+  { name: "Stock", percent: "9.19%" },
+  { name: "Investment Product", percent: "8.90%" },
+  { name: "Option", percent: "8.80%" },
+  { name: "Bond", percent: "6.96%" },
+  { name: "Interest Rate", percent: "6.58%" },
+  { name: "Index", percent: "5.51%" },
+  { name: "Fund", percent: "4.45%" },
+];

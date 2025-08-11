@@ -101,6 +101,7 @@ export function PortfolioValueChart() {
               tick={{ fontSize: 12 }}
             />
             <Tooltip />
+
             <Line
               yAxisId="right"
               type="monotone"

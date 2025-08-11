@@ -5,7 +5,9 @@ type Props = {
   value?: string;
 };
 
-export function PortfolioWeightBody({ name, code, percent, value }: Props) {
+export function TableBody({ name, code, percent, value }: Props) {
+  const getColorClass = (value?: string) =>
+    value?.startsWith("-") ? "text-[#DD000F]" : "text-[#008100]";
   return (
     <tr className="border-b border-t border-[#dedede]">
       <td className="py-2">
@@ -16,8 +18,8 @@ export function PortfolioWeightBody({ name, code, percent, value }: Props) {
       </td>
 
       <td className="py-2 text-right">
-        <p className={`text-sm`}>{percent}</p>
-        <p className={`text-xs`}>{value}</p>
+        <p className={`text-sm ${getColorClass(percent)}`}>{percent}</p>
+        <p className={`text-xs ${getColorClass(value)}`}>{value}</p>
       </td>
 
       <td className="py-2 flex items-center justify-center">
@@ -25,8 +27,8 @@ export function PortfolioWeightBody({ name, code, percent, value }: Props) {
           <div
             className="h-4"
             style={{
-              width: `${percent}`,
-              background: "#717376",
+              width: percent ? `${Math.abs(parseFloat(percent)) * 100}%` : "0%",
+              background: percent?.startsWith("-") ? "#DD000F" : "#008100",
             }}
           />
         </div>
