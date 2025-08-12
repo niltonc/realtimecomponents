@@ -2,7 +2,6 @@ import { ChartTable } from "@/components/chart-table";
 import { HeaderSummary } from "@/components/header";
 import { PieChart } from "@/components/pie-chart";
 import { TablePerformance } from "@/components/table-performance";
-
 import {
   AssetClassPercentages,
   colors,
@@ -15,6 +14,7 @@ import { TransactionsTable } from "@/components/table-transactions";
 // Update the import path below if your Tabs components are located elsewhere
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { PositionTable } from "@/components/table-positions";
+import { SectorsBar } from "@/components/sectors-bar";
 
 export default function Home() {
   return (
@@ -69,8 +69,21 @@ export default function Home() {
          <div className="w-1/2">
           <PortfolioValueChart />
         </div>
+        
       </div>
-
+        <div className="w-1/2">
+          <TablePerformance.Root title="Portfolio weight">
+            {UnPerformanceData.map((item) => (
+              <TablePerformance.Body
+                key={item.code}
+                name={item.name}
+                code={item.code}
+                percent={item.percent}
+                value={item.value}
+              />
+            ))}
+          </TablePerformance.Root>
+        </div>
       <h2 className="mt-10 text-2xl font-bold mb-4">Breakdown information</h2>
 
       <div className="flex gap-6">
@@ -114,8 +127,27 @@ export default function Home() {
               />
             ))}
           </ChartTable.Root>
+          
         </div>
+        
       </div>
+
+      <div className="w-1/2">
+
+        <SectorsBar />
+        <ChartTable.Root columnOne="Weight %" columnTwo="Asset class">
+                    {AssetClassPercentages.map((item) => (
+                      <ChartTable.Body
+                        key={item.name}
+                        columnOne={item.percent}
+                        columnTwo={item.name}
+                        colors={`bg-green-500`}
+                      />
+                    ))}
+                  </ChartTable.Root>
+
+      </div>
+        
             </div>
           </div>
         </TabsContent>
@@ -131,6 +163,7 @@ export default function Home() {
             <TransactionsTable />
           </div>
         </TabsContent>
+
       </Tabs>
     </div>
   );
