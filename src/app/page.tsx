@@ -10,6 +10,11 @@ import {
   PieChartData,
   UnPerformanceData,
 } from "@/mock";
+import { PortfolioValueChart } from "@/components/line-chart";
+import { TransactionsTable } from "@/components/table-transactions";
+// Update the import path below if your Tabs components are located elsewhere
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { PositionTable } from "@/components/table-positions";
 
 export default function Home() {
   return (
@@ -33,7 +38,20 @@ export default function Home() {
 
       <div className="mt-10" />
 
-      <div className="flex gap-2">
+      
+      <Tabs defaultValue="overview" className="w-full">
+        <TabsList className="mb-4">
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="positions">Positions</TabsTrigger>
+          <TabsTrigger value="transactions">Transactions</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="overview">
+          <div className="flex gap-6">
+     
+            <div className="w-full">
+              <div className="flex gap-6">
+
         <div className="w-1/2">
           <TablePerformance.Root title="Unrealized Performance">
             {UnPerformanceData.map((item) => (
@@ -48,9 +66,9 @@ export default function Home() {
           </TablePerformance.Root>
         </div>
 
-        {/* <div className="w-1/2">
+         <div className="w-1/2">
           <PortfolioValueChart />
-        </div> */}
+        </div>
       </div>
 
       <h2 className="mt-10 text-2xl font-bold mb-4">Breakdown information</h2>
@@ -98,6 +116,22 @@ export default function Home() {
           </ChartTable.Root>
         </div>
       </div>
+            </div>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="positions">
+          <div className="w-full mt-4">
+            <PositionTable />
+          </div>
+        </TabsContent>
+
+        <TabsContent value="transactions">
+          <div className="w-full mt-4">
+            <TransactionsTable />
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
